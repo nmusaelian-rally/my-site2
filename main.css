@@ -13,6 +13,7 @@ html {
     z-index: 10;
     font-family: tahoma, sans-serif;
     background-color: white;
+    padding: 5px;
 }
 
 .infobox > .title {
@@ -30,7 +31,7 @@ html {
 }
 
 .slide > span {
-    font-size: 16pt;
+    font-size: 14pt;
     position: absolute;
     left: 20px;
     z-index: 10;
@@ -44,7 +45,7 @@ html {
 }
 
 .navicon {
-    font-size: 16pt;
+    font-size: 14pt;
     position: absolute;
     left: 20px;
     z-index: 10;
@@ -69,6 +70,9 @@ html {
     top: 100px;
     font-family: sans-serif;
     padding-left: 90px;
+    padding-bottom: 5px;
+    padding-right: 5px;
+    padding-top: 5px;
     background-color: white;
 }
 
