@@ -10,3 +10,11 @@
 .carousel-control:hover {
     cursor: pointer;
 }
+
+.carousel-inner {
+    height: 100%;
+}
+
+.carousel-inner > .item {
+    height: 100%;
+}
