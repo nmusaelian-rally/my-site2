@@ -12,8 +12,11 @@
     <body class="full-height">
         <div id="image_container" class="full-height" ng-view></div>
         <div ng-controller="ButtonsController">
-            <i class="glyphicon glyphicon-th-large navicon" id="thumbButton" style="top: 60px;" ng-mouseover="openThumbnails()"></i>
+            <!--<i class="glyphicon glyphicon-th-large navicon" id="thumbButton" style="top: 60px;" ng-mouseover="openThumbnails()"></i>
             <i class="glyphicon glyphicon-user navicon {{isAboutShown ? 'navicon-highlight' : ''}}" style="top: 100px;" ng-mouseover="isAboutShown=true" ng-mouseleave="isAboutShown=false"></i>
+            -->
+            <span class="navicon" id="thumbButton" style="top: 60px;" ng-mouseover="openThumbnails()">Works</span>
+            <span class="navicon {{isAboutShown ? 'navicon-highlight' : ''}}" style="top: 100px;" ng-mouseover="isAboutShown=true" ng-mouseleave="isAboutShown=false">About</span>
             <div class="aboutbox {{(isAboutShown ? '' : 'nodisplay')}}" ng-mouseover="isAboutShown=true" ng-mouseleave="isAboutShown=false">
                 <span class="about-name">Nick Musaelian</span><br/>
                 <span class="about-contact">Contact: <a href="mailto:nick@nickmusaelian.com">nick@nickmusaelian.com</a></span><br/>
