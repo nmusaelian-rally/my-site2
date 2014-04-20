@@ -12,6 +12,7 @@ html {
     left: 60px;
     z-index: 10;
     font-family: tahoma, sans-serif;
+    background-color: white;
 }
 
 .infobox > .title {
@@ -39,6 +40,46 @@ html {
 
 .slide > i:hover {
     color: black;
+}
+
+.navicon {
+    font-size: 20pt;
+    position: absolute;
+    left: 20px;
+    z-index: 10;
+    color: gray;
+    cursor: pointer;
+}
+
+.navicon:hover {
+    color: black;
+}
+
+.navicon-highlight {
+    color: black;
+}
+
+.aboutbox {
+    position: absolute;
+    z-index: 9;
+    left: 20px;
+    top: 100px;
+    font-family: sans-serif;
+    padding-left: 40px;
+}
+
+.aboutbox > .about-name {
+    font-weight: bold;
+    font-size: 20pt;
+}
+
+.aboutbox > .about-footer {
+    color: grey;
+}
+
+.aboutbox > .about-footer > a {
+    color: grey;
+    text-decoration: underline;
 }
 
 .nodisplay {

@@ -2,8 +2,7 @@
     <div id="loadscreen" class="load-screen {{loadScreenClass}}"></div>
     <carousel interval="-1" class="img-carousel">
       <slide class="slide" ng-repeat="image in images" active="image.active">
-        <i class="glyphicon glyphicon-info-sign" style="top: 20px;" ng-mouseover="openInfo()" ng-mouseleave="closeInfo()"></i>
-        <i class="glyphicon glyphicon-th-large" style="top: 60px;" ng-click="openThumbnails()"></i>
+        <i class="glyphicon glyphicon-info-sign" style="top: 20px;" ng-mouseover="isInfoHidden=false" ng-mouseleave="isInfoHidden=true"></i>
         <div class="infobox {{(isInfoHidden ? 'nodisplay' : '')}}">
             <span class="title">{{image.name}}</span><br/>
             <span class="subtitle">{{(image.subtitle == undefined ? "" : image.subtitle)}}</span><br/><br/>
