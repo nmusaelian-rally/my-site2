@@ -30,39 +30,30 @@ function calcImageHeight(clientWindowHeight, heightInInches){
     return (imageHeight < clientWindowHeight) ? imageHeight : clientWindowHeight*0.9;
 }
 
-controllers.PaintingsCtrl = function($scope, $window){
-    $scope.page = {name: "Paintings"};
-    $scope.images = [
-        {
-            active: true,
-            image: "img/paintings/01.jpg"
-        },
-        {
-            active: false,
-            image: "img/paintings/02.jpg"
-        },
-        {
-            active: false,
-            image: "img/paintings/03.jpg"
-        },
-        {
-            active: false,
-            image: "img/paintings/04.jpg"
-        },
-        {
-            active: false,
-            image: "img/paintings/05.jpg"
+controllers.PaintingsCtrl = function($scope, $window, $http) {
+    $scope.page = {title: "Paintings", category: "paintings"};
+    $http.get("/img/" + $scope.page.category + "/info.json").then(function(result) {
+        $scope.imagejson = result.data; //Information about images (titles, id's, mediums)
+        $scope.images = result.data.map(function(imagedat, index) {
+            console.log(imagedat.id);
+            return {
+                active: (index == 0 ? true : false),
+                image: "/img/" + $scope.page.category + "/" + imagedat.id + ".jpg"
+            };
+        }); //The array of objects for the carousel element
+        $scope.totalImagesLoaded = 0;
+        $scope.loadScreenClass = "";
+        $scope.imageLoaded = function() {
+            $scope.totalImagesLoaded++;
+            if ($scope.totalImagesLoaded == $scope.images.length) {
+                $scope.$apply(function() {$scope.loadScreenClass = "hide"});
+                console.log("All images loaded.");
+            }
         }
-    ];
-    $scope.totalImagesLoaded = 0;
-    $scope.loadScreenClass = "";
-    $scope.imageLoaded = function() {
-        $scope.totalImagesLoaded++;
-        if ($scope.totalImagesLoaded == $scope.images.length) {
-            $scope.$apply(function() {$scope.loadScreenClass = "hide"});
-            console.log("All images loaded.");
-        }
-    }
+    },
+    function(error) {
+        alert("Error: "+JSON.stringify(error));
+    });
 };
 
 controllers.WoodcutsCtrl = function($scope, $window, ImageLoader){

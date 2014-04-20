@@ -1,5 +1,5 @@
 <div id="pictures" class="full-height">
-    <div id="loadscreen" class="load-screen {{loadScreenClass}}">Hello</div>
+    <div id="loadscreen" class="load-screen {{loadScreenClass}}"></div>
     <carousel interval="-1" class="img-carousel">
       <slide ng-repeat="image in images" active="image.active">
         <img ng-src="{{image.image}}" style="margin:auto; height: 90%;" img-load="imageLoaded()"/>
