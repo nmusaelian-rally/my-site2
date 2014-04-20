@@ -66,6 +66,7 @@ html {
     top: 100px;
     font-family: sans-serif;
     padding-left: 40px;
+    background-color: white;
 }
 
 .aboutbox > .about-name {
