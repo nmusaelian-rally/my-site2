@@ -2,7 +2,7 @@ var gallery = angular.module('nickmusaelian_gallery', ['ngRoute','ui.bootstrap']
 
 gallery.config(function($routeProvider){
     $routeProvider.
-        when('/paintings', {templateUrl: 'partials/paintings.html', controller: 'PaintingsCtrl'}).
+        when('/paintings', {templateUrl: 'partials/image-gallery.html', controller: 'PaintingsCtrl'}).
         when('/woodcuts', {templateUrl: 'partials/woodcuts.html', controller: 'WoodcutsCtrl'}).
         otherwise({redirectTo:'/paintings'});
 });
