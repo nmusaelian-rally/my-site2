@@ -2,6 +2,10 @@
     height: 100%;
 }
 
+html {
+    overflow: hidden;
+}
+
 .img-carousel {
     background-color: white;
     height: 100%;

@@ -2,8 +2,8 @@ var gallery = angular.module('nickmusaelian_gallery', ['ngRoute','ui.bootstrap']
 
 gallery.config(function($routeProvider){
     $routeProvider.
-        when('/paintings', {templateUrl: 'partials/image-gallery.html', controller: 'PaintingsCtrl'}).
-        when('/woodcuts', {templateUrl: 'partials/woodcuts.html', controller: 'WoodcutsCtrl'}).
+        when('/paintings', {templateUrl: 'partials/image-gallery.html', controller: 'GalleryCtrl'}).
+        when('/woodcuts', {templateUrl: 'partials/image-gallery.html', controller: 'GalleryCtrl'}).
         otherwise({redirectTo:'/paintings'});
 });
 
@@ -21,17 +21,8 @@ gallery.directive('imgLoad', function() { // 'imgLoad'
 
 var controllers = {};
 
-function calcImageHeight(clientWindowHeight, heightInInches){
-    var imageHeight;
-    console.log('height of the image', heightInInches);
-    //approximately 400px for each 12"
-    imageHeight = heightInInches/12*400;
-    console.log(imageHeight,clientWindowHeight);
-    return (imageHeight < clientWindowHeight) ? imageHeight : clientWindowHeight*0.9;
-}
-
-controllers.PaintingsCtrl = function($scope, $window, $http) {
-    $scope.page = {title: "Paintings", category: "paintings"};
+controllers.GalleryCtrl = function($scope, $window, $http, $location) {
+    $scope.page = {category: $location.path().slice(1)};
     $http.get("/img/" + $scope.page.category + "/info.json").then(function(result) {
         $scope.imagejson = result.data; //Information about images (titles, id's, mediums)
         $scope.images = result.data.map(function(imagedat, index) {
@@ -54,9 +45,6 @@ controllers.PaintingsCtrl = function($scope, $window, $http) {
     function(error) {
         alert("Error: "+JSON.stringify(error));
     });
-};
-
-controllers.WoodcutsCtrl = function($scope, $window, ImageLoader){
 };
 
 gallery.controller(controllers);
