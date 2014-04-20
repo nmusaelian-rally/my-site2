@@ -1,8 +1,10 @@
 <div id="pictures" class="full-height">
     <div id="loadscreen" class="load-screen {{loadScreenClass}}"></div>
     <carousel interval="-1" class="img-carousel">
-      <slide ng-repeat="image in images" active="image.active">
-        <div class="infobox">
+      <slide class="slide" ng-repeat="image in images" active="image.active">
+        <i class="glyphicon glyphicon-info-sign" style="top: 20px;" ng-mouseover="openInfo()" ng-mouseleave="closeInfo()"></i>
+        <i class="glyphicon glyphicon-th-large" style="top: 60px;" ng-click="openThumbnails()"></i>
+        <div class="infobox {{(isInfoHidden ? 'nodisplay' : '')}}">
             <span class="title">{{image.name}}</span><br/>
             <span class="subtitle">{{(image.subtitle == undefined ? "" : image.subtitle)}}</span><br/><br/>
             <span class="medium">{{image.medium}}</span>

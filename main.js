@@ -23,6 +23,13 @@ var controllers = {};
 
 controllers.GalleryCtrl = function($scope, $window, $http, $location) {
     $scope.page = {category: $location.path().slice(1)};
+    $scope.isInfoHidden = true;
+    $scope.openInfo = function() {
+        $scope.isInfoHidden = false;
+    };
+    $scope.closeInfo = function() {
+        $scope.isInfoHidden = true;
+    }
     $http.get("/img/" + $scope.page.category + "/info.json").then(function(result) {
         var imagejson = result.data; //Information about images (titles, id's, mediums)
         $scope.images = result.data.map(function(imagedat, index) {
