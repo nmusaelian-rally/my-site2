@@ -2,26 +2,32 @@
     {
         "id"     : "01",
         "name"   : "The Cook Admits to Nothing",
-        "medium" :"1x1\" Oil tempra."
+        "medium" : "Oil tempra.",
+        "dimensions" : "1x1",
+        "subtitle" : "The cook is guilty."
     },
     {
         "id"     : "02",
         "name"   : "I Did It Because Men are Cowards",
-        "medium" :"1x1\" Oil tempra."
+        "medium" :"Oil tempra.",
+        "dimensions" : "1x1"
     },
     {
         "id"     : "03",
         "name"   : "Samson's Haircut",
-        "medium" :"1x1\" Oil tempra."
+        "medium" :"Oil tempra.",
+        "dimensions" : "1x1"
     },
     {
         "id"     : "04",
         "name"   : "I Did It Because Men are Cowards",
-        "medium" :"1x1\" Oil tempra."
+        "medium" :"Oil tempra.",
+        "dimensions" : "1x1"
     },
     {
         "id"     : "05",
         "name"   : "I Did It Because Men are Cowards",
-        "medium" :"1x1\" Oil tempra."
+        "medium" :"Oil tempra.",
+        "dimensions" : "1x1"
     }
 ]

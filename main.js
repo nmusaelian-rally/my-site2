@@ -24,7 +24,7 @@ var controllers = {};
 controllers.GalleryCtrl = function($scope, $window, $http, $location) {
     $scope.page = {category: $location.path().slice(1)};
     $http.get("/img/" + $scope.page.category + "/info.json").then(function(result) {
-        $scope.imagejson = result.data; //Information about images (titles, id's, mediums)
+        var imagejson = result.data; //Information about images (titles, id's, mediums)
         $scope.images = result.data.map(function(imagedat, index) {
             console.log(imagedat.id);
             return {
@@ -32,6 +32,11 @@ controllers.GalleryCtrl = function($scope, $window, $http, $location) {
                 image: "/img/" + $scope.page.category + "/" + imagedat.id + ".jpg"
             };
         }); //The array of objects for the carousel element
+        $scope.images = $scope.images.map(function (image, index) {
+            for (var attrname in imagejson[index]) { image[attrname] = imagejson[index][attrname]; }
+            return image;
+        });
+        console.log($scope.images);
         $scope.totalImagesLoaded = 0;
         $scope.loadScreenClass = "";
         $scope.imageLoaded = function() {

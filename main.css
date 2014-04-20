@@ -6,6 +6,28 @@ html {
     overflow: hidden;
 }
 
+.infobox {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 10;
+    font-family: tahoma, sans-serif;
+}
+
+.infobox > .title {
+    font-weight: bold;
+    font-size: large;
+}
+
+.infobox > .medium, .dimensions {
+    font-size: small;
+    font-weight: lighter;
+}
+
+.infobox > .subtitle {
+    font-style: italic;
+}
+
 .img-carousel {
     background-color: white;
     height: 100%;

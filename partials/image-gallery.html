@@ -2,6 +2,12 @@
     <div id="loadscreen" class="load-screen {{loadScreenClass}}"></div>
     <carousel interval="-1" class="img-carousel">
       <slide ng-repeat="image in images" active="image.active">
+        <div class="infobox">
+            <span class="title">{{image.name}}</span><br/>
+            <span class="subtitle">{{(image.subtitle == undefined ? "" : image.subtitle)}}</span><br/><br/>
+            <span class="medium">{{image.medium}}</span>
+            <span class="dimensions">{{image.dimensions}}</span><br/>
+        </div>
         <img ng-src="{{image.image}}" style="margin:auto; height: 90%;" img-load="imageLoaded()"/>
       </slide>
     </carousel>
