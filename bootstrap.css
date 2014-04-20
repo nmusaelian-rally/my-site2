@@ -5626,9 +5626,9 @@ button.close {
 .carousel-inner > .item {
   position: relative;
   display: none;
-  -webkit-transition:  0.01s ease-in-out left;
-       -o-transition:  0.01s ease-in-out left;
-          transition:  0.01s ease-in-out left;
+  -webkit-transition:  0.0001s ease-in-out left;
+       -o-transition:  0.0001s ease-in-out left;
+          transition:  0.0001s ease-in-out left;
 }
 .carousel-inner > .item > img,
 .carousel-inner > .item > a > img {
