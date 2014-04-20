@@ -7,6 +7,18 @@ gallery.config(function($routeProvider){
         otherwise({redirectTo:'/paintings'});
 });
 
+gallery.directive('imgLoad', function() { // 'imgLoad'
+    return {
+        restrict: 'A',
+        scope: {
+            loadHandler: '&imgLoad' // 'imgLoad'
+        },
+        link: function (scope, element, attr) {
+            element.on('load', scope.loadHandler);
+        }
+    };
+});
+
 var controllers = {};
 
 function calcImageHeight(clientWindowHeight, heightInInches){
@@ -40,8 +52,17 @@ controllers.PaintingsCtrl = function($scope, $window){
         {
             active: false,
             image: "img/paintings/05.jpg"
-        },
+        }
     ];
+    $scope.totalImagesLoaded = 0;
+    $scope.loadScreenClass = "";
+    $scope.imageLoaded = function() {
+        $scope.totalImagesLoaded++;
+        if ($scope.totalImagesLoaded == $scope.images.length) {
+            $scope.$apply(function() {$scope.loadScreenClass = "hide"});
+            console.log("All images loaded.");
+        }
+    }
 };
 
 controllers.WoodcutsCtrl = function($scope, $window, ImageLoader){

@@ -18,3 +18,20 @@
 .carousel-inner > .item {
     height: 100%;
 }
+
+.load-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    z-index: 10000;
+    background-image: url("/ajax-loader.gif");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.hide {
+    display: none;
+}
