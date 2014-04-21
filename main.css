@@ -92,19 +92,12 @@ html {
 .chooser {
     position: absolute;
     top: 0;
-    left: 90px;
-    width: 380px;
+    left: 0px;
+    padding-left: 90px;
+    width: 470px;
     height: 100%;
     background-color: white;
     box-shadow: 5px 0px 5px white;
-    z-index: 100;
-}
-
-.close-button {
-    cursor: pointer;
-    position: absolute;
-    top: 5px;
-    right: 5px;
 }
 
 .category {
