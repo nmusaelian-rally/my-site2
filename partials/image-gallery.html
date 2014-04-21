@@ -4,7 +4,7 @@
       <slide class="slide" ng-repeat="image in images" active="image.active">
         <!--<i class="glyphicon glyphicon-info-sign" style="top: 20px;" ng-mouseover="isInfoHidden=false" ng-mouseleave="isInfoHidden=true"></i>-->
         <span style="top: 20px;" ng-mouseover="isInfoHidden=false" ng-mouseleave="isInfoHidden=true">Info</span>
-        <div class="infobox {{(isInfoHidden ? 'nodisplay' : '')}}">
+        <div class="infobox" ng-hide="isInfoHidden">
             <span class="title">{{image.name}}</span><br/>
             <span class="subtitle">{{(image.subtitle == undefined ? "" : image.subtitle)}}</span><br/><br/>
             <span class="medium">{{image.medium}}</span>

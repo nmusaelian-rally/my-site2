@@ -18,7 +18,7 @@
             -->
             <span class="navicon {{isChooserShown ? 'navicon-highlight' : ''}}" id="thumbButton" style="top: 60px;" ng-mouseover="isChooserShown = true" ng-mouseleave="isChooserShown=false">More</span>
             <span class="navicon {{isAboutShown ? 'navicon-highlight' : ''}}" style="top: 100px;" ng-mouseover="isAboutShown=true" ng-mouseleave="isAboutShown=false">About</span>
-            <div class="aboutbox {{(isAboutShown ? '' : 'nodisplay')}}" ng-mouseover="isAboutShown=true" ng-mouseleave="isAboutShown=false">
+            <div class="aboutbox" ng-show="isAboutShown" ng-mouseover="isAboutShown=true" ng-mouseleave="isAboutShown=false">
                 <span class="about-name">Nick Musaelian</span><br/>
                 <span class="about-contact">Contact: <a href="mailto:nick@nickmusaelian.com">nick@nickmusaelian.com</a></span><br/>
                 <span class="about-gallerys">
@@ -30,8 +30,8 @@
                     &copy; Nick Musaelian. Website designed by <a href="http://www.toadbytes.com">Toadbytes</a>.
                 </span>
             </div>
-            <div ng-controller="ThumbnailChooserController" class="chooser {{isChooserShown ? '' : 'nodisplay'}}" ng-mouseover="$parent.isChooserShown = true" ng-mouseleave="$parent.isChooserShown = false">
-                <div class="load-screen {{isLoaded ? 'nodisplay' : ''}}"></div>
+            <div ng-controller="ThumbnailChooserController" ng-show="isChooserShown" class="chooser" ng-mouseover="$parent.isChooserShown = true" ng-mouseleave="$parent.isChooserShown = false">
+                <div class="load-screen" ng-hide="isLoaded"></div>
                 <div class="category" ng-repeat="category in categories">
                     <center><span class="category-title">{{category.title}}</span></center>
                     <table class="category-thumbnails">
