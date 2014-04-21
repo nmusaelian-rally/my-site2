@@ -29,7 +29,7 @@
                     &copy; Nick Musaelian. Website designed by <a href="http://www.toadbytes.com">Toadbytes</a>.
                 </span>
             </div>
-            <div ng-controller="ThumbnailChooserController" class="chooser {{isChooserShown ? '' : 'nodisplay'}}" ng-mouseleave="hideChooser()">
+            <div ng-controller="ThumbnailChooserController" class="chooser {{isChooserShown ? '' : 'nodisplay'}}" ng-mouseover="$parent.isChooserShown = true" ng-mouseleave="$parent.isChooserShown = false">
                 <div class="load-screen {{isLoaded ? 'nodisplay' : ''}}"></div>
                 <div class="category" ng-repeat="category in categories">
                     <center><span class="category-title">{{category.title}}</span></center><br/><br/>

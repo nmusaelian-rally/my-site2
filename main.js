@@ -31,9 +31,9 @@ var controllers = {};
 controllers.ButtonsController = function($scope, $window) {
     $scope.isAboutShown = false;
     $scope.isChooserShown = false;
-    $scope.hideChooser = function() {
-        console.log("hide");
-        $scope.isChooserShown = false;
+    $scope.showChooser = function() {
+        console.log("show");
+        $scope.isChooserShown = true;
     }
 }
 
@@ -45,6 +45,9 @@ controllers.ThumbnailChooserController = function($scope, $window, $http, $locat
         if ($scope.imagesLoaded == $scope.totalImages) {
             $scope.isLoaded = true;
         }
+    }
+    $scope.goToImage = function(newid) {
+        console.log(newid);
     }
     $http.get("/img/images.json").then(function(result) {
         $scope.totalImages = result.data.totalImages;
