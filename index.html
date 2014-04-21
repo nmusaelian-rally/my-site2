@@ -37,10 +37,10 @@
                         <tr ng-repeat="row in category.images">
                             <td ng-repeat="imgid in row" class="thumbnail-cell">
                                 <img ng-src="{{'/img/' + category.category + '/' + imgid + '-thumb.jpg'}}"
-                                     id="{{category.category + imgid}}"
+                                     id="{{category.category + '.' + imgid}}"
                                      class="image-thumbnail {{this.id == selectedImage ? 'selected' : ''}}" 
                                      img-load="imageLoaded()"
-                                     ng-click="goToImage(this.id)"/>
+                                     ng-click="goToImage(category.category + '.' + imgid)"/>
                             </td>
                         </tr>
                     </table>

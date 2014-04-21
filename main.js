@@ -19,22 +19,11 @@ gallery.directive('imgLoad', function() { // 'imgLoad'
     };
 });
 
-Array.prototype.chunk = function(chunkSize) {
-    var R = [];
-    for (var i=0; i<this.length; i+=chunkSize)
-        R.push(this.slice(i,i+chunkSize));
-    return R;
-}
-
 var controllers = {};
 
 controllers.ButtonsController = function($scope, $window) {
     $scope.isAboutShown = false;
     $scope.isChooserShown = false;
-    $scope.showChooser = function() {
-        console.log("show");
-        $scope.isChooserShown = true;
-    }
 }
 
 controllers.ThumbnailChooserController = function($scope, $window, $http, $location, $rootScope) {
@@ -47,7 +36,7 @@ controllers.ThumbnailChooserController = function($scope, $window, $http, $locat
         }
     }
     $scope.goToImage = function(newid) {
-        console.log(newid);
+        $rootScope.$broadcast("ChangeIndex", newid);
     }
     $http.get("/img/images.json").then(function(result) {
         $scope.totalImages = result.data.totalImages;
@@ -61,16 +50,12 @@ controllers.ThumbnailChooserController = function($scope, $window, $http, $locat
 controllers.GalleryCtrl = function($scope, $window, $http, $location) {
     $scope.page = {category: $location.path().slice(1)};
     $scope.isInfoHidden = true;
-    $scope.$on('ChangeIndex', function(newid) {
-        console.log("Change");
-        for(var i = 0; i < $scope.images.length; i++) {
-            if (images[i].id == newid) {
-                images[i].active = true;
+    $scope.$on('ChangeIndex', function(event, newid) {
+        $scope.images.forEach(function(element) {
+            if (element.id == newid.split('.')[1]) {
+                element.active = true;
             }
-            else {
-                images[i].active = false;
-            }
-        }
+        });
     });
     $http.get("/img/" + $scope.page.category + "/info.json").then(function(result) {
         var imagejson = result.data; //Information about images (titles, id's, mediums)
