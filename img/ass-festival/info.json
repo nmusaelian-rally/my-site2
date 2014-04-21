@@ -1,15 +1,15 @@
 [
     {
-        "id"     : "01",
-        "name"   : "The Ass Festival",
-        "subtitle" : "Central panel",
+        "id"     : "02",
+        "name"   : "The Ass Festival: Escape",
+        "subtitle" : "Left panel",
         "medium" : "Egg tempera and oil on panel",
         "dimensions" : "42x48in."
     },
     {
-        "id"     : "02",
-        "name"   : "The Ass Festival: Escape",
-        "subtitle" : "Left panel",
+        "id"     : "01",
+        "name"   : "The Ass Festival",
+        "subtitle" : "Central panel",
         "medium" : "Egg tempera and oil on panel",
         "dimensions" : "42x48in."
     },
