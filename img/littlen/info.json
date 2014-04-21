@@ -1,0 +1,58 @@
+[
+    {
+        "id"     : "01",
+        "name"   : "Little Nietzsche 1",
+        "subtitle" : "I am forbearing to the vain because they are the physicians of my melancholy.",
+        "medium" :"Oil on canvas",
+        "dimensions" : "24x24in."
+    },
+    {
+        "id"     : "02",
+        "name"   : "Little Nietzsche 2",
+        "subtitle" : "You made danger your calling, there is nothing in that to despise.",
+        "medium" :"Oil on canvas",
+        "dimensions" : "24x24in."
+    },
+    {
+        "id"     : "03",
+        "name"   : "Little Nietzsche 3",
+        "subtitle" : "I will not let your fear spoil my pleasure at the sight of the wicked.",
+        "medium" :"Oil on canvas",
+        "dimensions" : "24x24in."
+    },
+    {
+        "id"     : "04",
+        "name"   : "Little Nietzsche 4",
+        "subtitle" : "He who wants to stay clean among men must learn to wash himself even with dirty water.",
+        "medium" :"Oil on canvas",
+        "dimensions" : "24x24in."
+    },
+    {
+        "id"     : "05",
+        "name"   : "Little Nietzsche 5",
+        "subtitle" : "I allow myself not to be on guard against deceivers.",
+        "medium" :"Oil on canvas",
+        "dimensions" : "24x24in."
+    },
+    {
+        "id"     : "06",
+        "name"   : "Little Nietzsche 6",
+        "subtitle" : "And you profound men, you suffer profoundly even from small wounds.",
+        "medium" :"Oil on canvas",
+        "dimensions" : "24x24in."
+    },
+    {
+        "id"     : "07",
+        "name"   : "Little Nietzsche 7",
+        "subtitle" : "I will sit disguised among you in order to mistake you and myself.",
+        "medium" :"Oil on canvas",
+        "dimensions" : "24x24in."
+    },
+    {
+        "id"     : "07",
+        "name"   : "Little Nietzsche 7",
+        "subtitle" : "Not when the truth is dirty but when it's shallow I dislike to step into its waters.",
+        "medium" :"Oil on canvas",
+        "dimensions" : "24x24in."
+    }
+]

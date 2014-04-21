@@ -2,9 +2,11 @@ var gallery = angular.module('nickmusaelian_gallery', ['ngRoute','ui.bootstrap']
 
 gallery.config(function($routeProvider){
     $routeProvider.
-        when('/paintings', {templateUrl: 'partials/image-gallery.html', controller: 'GalleryCtrl'}).
+        when('/situations', {templateUrl: 'partials/image-gallery.html', controller: 'GalleryCtrl'}).
+        when('/littlen', {templateUrl: 'partials/image-gallery.html', controller: 'GalleryCtrl'}).
+        when('/ass-festival', {templateUrl: 'partials/image-gallery.html', controller: 'GalleryCtrl'}).
         when('/woodcuts', {templateUrl: 'partials/image-gallery.html', controller: 'GalleryCtrl'}).
-        otherwise({redirectTo:'/paintings'});
+        otherwise({redirectTo:'/situations'});
 });
 
 gallery.directive('imgLoad', function() { // 'imgLoad'
@@ -45,6 +47,10 @@ controllers.ThumbnailChooserController = function($scope, $window, $http, $locat
             $location.path("/" + newid[0]);
         }
         $rootScope.$broadcast("ChangeIndex", newid[0]);
+    }
+    $scope.selectedImage = function() {
+        curr_category = $location.path().slice(1);
+        return curr_category + "." + currents[curr_category];
     }
     $http.get("/img/images.json").then(function(result) {
         $scope.totalImages = result.data.totalImages;

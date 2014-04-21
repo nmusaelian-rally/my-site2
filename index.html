@@ -32,13 +32,13 @@
             <div ng-controller="ThumbnailChooserController" class="chooser {{isChooserShown ? '' : 'nodisplay'}}" ng-mouseover="$parent.isChooserShown = true" ng-mouseleave="$parent.isChooserShown = false">
                 <div class="load-screen {{isLoaded ? 'nodisplay' : ''}}"></div>
                 <div class="category" ng-repeat="category in categories">
-                    <center><span class="category-title">{{category.title}}</span></center><br/><br/>
+                    <center><span class="category-title">{{category.title}}</span></center>
                     <table class="category-thumbnails">
                         <tr ng-repeat="row in category.images">
                             <td ng-repeat="imgid in row" class="thumbnail-cell">
                                 <img ng-src="{{'/img/' + category.category + '/' + imgid + '-thumb.jpg'}}"
                                      id="{{category.category + '.' + imgid}}"
-                                     class="image-thumbnail {{this.id == selectedImage ? 'selected' : ''}}" 
+                                     class="image-thumbnail {{(category.category + '.' + imgid) == selectedImage() ? 'selected' : ''}}" 
                                      img-load="imageLoaded()"
                                      ng-click="goToImage(category.category + '.' + imgid)"/>
                             </td>

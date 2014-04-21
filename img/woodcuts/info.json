@@ -2,13 +2,43 @@
     {
         "id"     : "01",
         "name"   : "The Cook Admits to Nothing",
-        "medium" : "Oil tempra.",
-        "dimensions" : "1x1"
+        "medium" : "Limited edition woodcut print.",
+        "dimensions" : "28x22in."
     },
     {
         "id"     : "02",
         "name"   : "I Did It Because Men are Cowards",
-        "medium" :"Oil tempra.",
-        "dimensions" : "1x1"
+        "medium" :"Limited edition woodcut print.",
+        "dimensions" : "28x22in."
+    },
+    {
+        "id"     : "03",
+        "name"   : "Samson's Haircut",
+        "medium" :"Limited edition woodcut print.",
+        "dimensions" : "18x24in."
+    },
+    {
+        "id"     : "04",
+        "name"   : "The Shadow",
+        "medium" :"Limited edition woodcut print.",
+        "dimensions" : "11x14in."
+    },
+    {
+        "id"     : "05",
+        "name"   : "The Potter Who Did Not Learn His Craft and Took Revenge on His Pots",
+        "medium" :"Limited edition woodcut print.",
+        "dimensions" : "12x12in."
+    },
+    {
+        "id"     : "06",
+        "name"   : "Pity",
+        "medium" :"Limited edition woodcut print.",
+        "dimensions" : "24x18in."
+    },
+    {
+        "id"     : "07",
+        "name"   : "You Send Most Shameless Beggars to My Charity",
+        "medium" :"Limited edition woodcut print.",
+        "dimensions" : "18x24in."
     }
 ]
