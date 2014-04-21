@@ -19,6 +19,8 @@ gallery.directive('imgLoad', function() { // 'imgLoad'
     };
 });
 
+gallery.value("currents", {'paintings' : '01', 'woodcuts' : '01'});
+
 var controllers = {};
 
 controllers.ButtonsController = function($scope, $window) {
@@ -26,7 +28,7 @@ controllers.ButtonsController = function($scope, $window) {
     $scope.isChooserShown = false;
 }
 
-controllers.ThumbnailChooserController = function($scope, $window, $http, $location, $rootScope) {
+controllers.ThumbnailChooserController = function($scope, $window, $http, $location, $rootScope, currents) {
     $scope.isLoaded = false;
     $scope.imagesLoaded = 0;
     $scope.imageLoaded = function() {
@@ -36,7 +38,13 @@ controllers.ThumbnailChooserController = function($scope, $window, $http, $locat
         }
     }
     $scope.goToImage = function(newid) {
-        $rootScope.$broadcast("ChangeIndex", newid);
+        newid = newid.split('.');
+        curr_category = $location.path().slice(1);
+        currents[newid[0]] = newid[1];
+        if (curr_category != newid[0]) {
+            $location.path("/" + newid[0]);
+        }
+        $rootScope.$broadcast("ChangeIndex", newid[0]);
     }
     $http.get("/img/images.json").then(function(result) {
         $scope.totalImages = result.data.totalImages;
@@ -47,22 +55,23 @@ controllers.ThumbnailChooserController = function($scope, $window, $http, $locat
     });
 }
 
-controllers.GalleryCtrl = function($scope, $window, $http, $location) {
+controllers.GalleryCtrl = function($scope, $window, $http, $location, currents) {
     $scope.page = {category: $location.path().slice(1)};
     $scope.isInfoHidden = true;
-    $scope.$on('ChangeIndex', function(event, newid) {
-        $scope.images.forEach(function(element) {
-            if (element.id == newid.split('.')[1]) {
-                element.active = true;
-            }
-        });
+    $scope.$on('ChangeIndex', function(event, category) {
+        if ($scope.page.category == category) {
+            $scope.images.forEach(function(element) {
+                if (element.id == currents[category]) {
+                    element.active = true;
+                }
+            });
+        }
     });
     $http.get("/img/" + $scope.page.category + "/info.json").then(function(result) {
         var imagejson = result.data; //Information about images (titles, id's, mediums)
         $scope.images = result.data.map(function(imagedat, index) {
-            console.log(imagedat.id);
             return {
-                active: (imagedat.id == '01' ? true : false),
+                active: (imagedat.id == currents[$scope.page.category] ? true : false),
                 image: "/img/" + $scope.page.category + "/" + imagedat.id + ".jpg"
             };
         }); //The array of objects for the carousel element
@@ -70,7 +79,6 @@ controllers.GalleryCtrl = function($scope, $window, $http, $location) {
             for (var attrname in imagejson[index]) { image[attrname] = imagejson[index][attrname]; }
             return image;
         });
-        console.log($scope.images);
         $scope.totalImagesLoaded = 0;
         $scope.loadScreenClass = "";
         $scope.imageLoaded = function() {
