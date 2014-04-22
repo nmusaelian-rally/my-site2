@@ -47,6 +47,7 @@ controllers.ThumbnailChooserController = function($scope, $window, $http, $locat
             $location.path("/" + newid[0]);
         }
         $rootScope.$broadcast("ChangeIndex", newid[0]);
+        $scope.$parent.isChooserShown = false;
     }
     $scope.selectedImage = function() {
         curr_category = $location.path().slice(1);
