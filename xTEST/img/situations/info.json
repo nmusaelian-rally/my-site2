@@ -1,0 +1,32 @@
+[
+    {
+        "id"     : "01",
+        "name"   : "The Cook Admits to Nothing",
+        "medium" :"Oil on linen",
+        "dimensions" : "60x48in."
+    },
+    {
+        "id"     : "02",
+        "name"   : "I Did It Because Men are Cowards",
+        "medium" :"Oil on linen",
+        "dimensions" : "48x48in."
+    },
+    {
+        "id"     : "03",
+        "name"   : "Philistine Waiter",
+        "medium" :"Oil on linen",
+        "dimensions" : "59x48in."
+    },
+    {
+        "id"     : "04",
+        "name"   : "Damn Boat",
+        "medium" :"Oil on linen",
+        "dimensions" : "60x48in."
+    },
+    {
+        "id"     : "05",
+        "name"   : "The Skunk Didn't Do It",
+        "medium" :"Oil on linen",
+        "dimensions" : "59x47in."
+    }
+]

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html ng-app="nickmusaelian_gallery" class="full-height">
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular-route.min.js"></script>
+        <script src="https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.10.0.js"></script>
+        <!--link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet"-->
+        <link rel="stylesheet" href="bootstrap.css" type="text/css"/>
+        <link rel="stylesheet" href="main.css" type="text/css" />
+        <script type="text/javascript" src="main.js"></script>
+        <title>Nick Musaelian</title>
+    </head>
+    <body class="full-height">
+        <div id="image_container" class="full-height" ng-view></div>
+        <div ng-controller="ButtonsController">
+            <!--<i class="glyphicon glyphicon-th-large navicon" id="thumbButton" style="top: 60px;" ng-mouseover="openThumbnails()"></i>
+            <i class="glyphicon glyphicon-user navicon {{isAboutShown ? 'navicon-highlight' : ''}}" style="top: 100px;" ng-mouseover="isAboutShown=true" ng-mouseleave="isAboutShown=false"></i>
+            -->
+            <span class="navicon {{isChooserShown ? 'navicon-highlight' : ''}}" id="thumbButton" style="top: 60px;" ng-mouseover="isChooserShown = true" ng-mouseleave="isChooserShown=false">More</span>
+            <span class="navicon {{isAboutShown ? 'navicon-highlight' : ''}}" style="top: 100px;" ng-mouseover="isAboutShown=true" ng-mouseleave="isAboutShown=false">About</span>
+            <div class="aboutbox" ng-show="isAboutShown" ng-mouseover="isAboutShown=true" ng-mouseleave="isAboutShown=false">
+                <span class="about-name">Nick Musaelian</span><br/>
+                <span class="about-contact">Contact: <a href="mailto:nick@nickmusaelian.com">nick@nickmusaelian.com</a></span><br/>
+                <span class="about-gallerys">
+                    Galleries:<br/>
+                    <a href="http://www.plusgallery.com">Plus Gallery, Denver</a><br/>
+                    <a href="http://www.blueleafgallery.com/">Blue Leaf Gallery, Dublin</a>
+                </span><br/><br/>
+                <span class="about-footer">
+                    &copy; Nick Musaelian. <br />Website designed by <a href="http://www.toadbytes.com">Toadbytes</a>.
+                </span>
+            </div>
+            <div ng-controller="ThumbnailChooserController" ng-show="isChooserShown" class="chooser" ng-mouseover="$parent.isChooserShown = true" ng-mouseleave="$parent.isChooserShown = false">
+                <div class="load-screen" ng-hide="isLoaded"></div>
+                <div class="category" ng-repeat="category in categories">
+                    <center><span class="category-title">{{category.title}}</span></center>
+                    <table class="category-thumbnails">
+                        <tr ng-repeat="row in category.images">
+                            <td ng-repeat="imgid in row" class="thumbnail-cell">
+                                <img ng-src="{{'/img/' + category.category + '/' + imgid + '-thumb.jpg'}}"
+                                     id="{{category.category + '.' + imgid}}"
+                                     class="image-thumbnail {{(category.category + '.' + imgid) == selectedImage() ? 'selected' : ''}}" 
+                                     img-load="imageLoaded()"
+                                     ng-click="goToImage(category.category + '.' + imgid)"/>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
