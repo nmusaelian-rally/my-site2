@@ -1,9 +1,14 @@
 {
-    "totalImages" : 23,
+    "totalImages" : 30,
     "data" : [
         {
             "title" : "Situations",
             "category" : "situations",
+            "images" : [["01", "02", "03"], ["04", "05"]]
+        },
+        {
+            "title" : "Portraits",
+            "category" : "portraits",
             "images" : [["01", "02", "03"], ["04", "05"]]
         },
         {
@@ -13,13 +18,18 @@
         },
         {
             "title" : "The Ass Festival",
-            "category" : "ass-festival",
+            "category" : "festival",
             "images" : [["02", "01", "03"]]
         },
         {
             "title" : "Woodcuts",
             "category" : "woodcuts",
             "images" : [["01", "02", "03"], ["04", "05", "06"], ["07"]]
+        },
+        {
+            "title" : "Local Man & French Actresses",
+            "category" : "local-man",
+            "images" : [["01", "02"]]
         }
     ]
 }

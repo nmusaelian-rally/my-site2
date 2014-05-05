@@ -2,10 +2,12 @@ var gallery = angular.module('nickmusaelian_gallery', ['ngRoute','ui.bootstrap']
 
 gallery.config(function($routeProvider){
     $routeProvider.
+        when('/portraits', {templateUrl: 'partials/image-gallery.html', controller: 'GalleryCtrl'}).
         when('/situations', {templateUrl: 'partials/image-gallery.html', controller: 'GalleryCtrl'}).
         when('/littlen', {templateUrl: 'partials/image-gallery.html', controller: 'GalleryCtrl'}).
-        when('/ass-festival', {templateUrl: 'partials/image-gallery.html', controller: 'GalleryCtrl'}).
+        when('/festival', {templateUrl: 'partials/image-gallery.html', controller: 'GalleryCtrl'}).
         when('/woodcuts', {templateUrl: 'partials/image-gallery.html', controller: 'GalleryCtrl'}).
+        when('/local-man', {templateUrl: 'partials/image-gallery.html', controller: 'GalleryCtrl'}).
         otherwise({redirectTo:'/situations'});
 });
 

@@ -1,0 +1,23 @@
+[
+    {
+        "id"     : "02",
+        "name"   : "The Ass Festival: Escape",
+        "subtitle" : "Left panel",
+        "medium" : "Egg tempera and oil on panel",
+        "dimensions" : "42x48in."
+    },
+    {
+        "id"     : "01",
+        "name"   : "The Ass Festival",
+        "subtitle" : "Central panel",
+        "medium" : "Egg tempera and oil on panel",
+        "dimensions" : "42x48in."
+    },
+    {
+        "id"     : "03",
+        "name"   : "The Ass Festival: Doormen Must be Overcome",
+        "subtitle" : "Right panel",
+        "medium" : "Egg tempera and oil on panel",
+        "dimensions" : "27x36in."
+    }
+]
