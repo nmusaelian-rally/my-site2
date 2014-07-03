@@ -2,12 +2,7 @@ var gallery = angular.module('nickmusaelian_gallery', ['ngRoute','ui.bootstrap']
 
 gallery.config(function($routeProvider){
     $routeProvider.
-        when('/portraits', {templateUrl: 'partials/image-gallery.html', controller: 'GalleryCtrl'}).
-        when('/situations', {templateUrl: 'partials/image-gallery.html', controller: 'GalleryCtrl'}).
-        when('/littlen', {templateUrl: 'partials/image-gallery.html', controller: 'GalleryCtrl'}).
-        when('/festival', {templateUrl: 'partials/image-gallery.html', controller: 'GalleryCtrl'}).
-        when('/woodcuts', {templateUrl: 'partials/image-gallery.html', controller: 'GalleryCtrl'}).
-        when('/local-man', {templateUrl: 'partials/image-gallery.html', controller: 'GalleryCtrl'}).
+        when('/:category', {templateUrl: 'partials/image-gallery.html', controller: 'GalleryCtrl'}).
         otherwise({redirectTo:'/situations'});
 });
 
@@ -32,7 +27,7 @@ controllers.ButtonsController = function($scope, $window) {
     $scope.isChooserShown = false;
 }
 
-controllers.ThumbnailChooserController = function($scope, $window, $http, $location, $rootScope, currents) {
+controllers.ThumbnailChooserController = function($scope, $window, $http, $location, $routeParams, $rootScope, currents) {
     $scope.isLoaded = false;
     $scope.imagesLoaded = 0;
     $scope.imageLoaded = function() {
@@ -43,7 +38,7 @@ controllers.ThumbnailChooserController = function($scope, $window, $http, $locat
     }
     $scope.goToImage = function(newid) {
         newid = newid.split('.');
-        curr_category = $location.path().slice(1);
+        curr_category = $routeParams.category;
         currents[newid[0]] = newid[1];
         if (curr_category != newid[0]) {
             $location.path("/" + newid[0]);
@@ -52,7 +47,7 @@ controllers.ThumbnailChooserController = function($scope, $window, $http, $locat
         $scope.$parent.isChooserShown = false;
     }
     $scope.selectedImage = function() {
-        curr_category = $location.path().slice(1);
+        curr_category = $routeParams.category;
         return curr_category + "." + currents[curr_category];
     }
     $http.get("/img/images.json").then(function(result) {
@@ -64,8 +59,8 @@ controllers.ThumbnailChooserController = function($scope, $window, $http, $locat
     });
 }
 
-controllers.GalleryCtrl = function($scope, $window, $http, $location, currents) {
-    $scope.page = {category: $location.path().slice(1)};
+controllers.GalleryCtrl = function($scope, $window, $http, $location, $routeParams, currents) {
+    $scope.page = {category: $routeParams.category};
     $scope.isInfoHidden = true;
     $scope.$on('ChangeIndex', function(event, category) {
         if ($scope.page.category == category) {
