@@ -25,6 +25,12 @@
     },
     {
         "id"     : "05",
+        "name"   : "Tell No Tales",
+        "medium" : "Oil on canvas",
+        "dimensions" : "30x48in."
+    },
+    {
+        "id"     : "06",
         "name"   : "My Mom Looked Like 60's Movie Star",
         "medium" :"Oil on canvas",
         "dimensions" : "10x12in."

@@ -1,5 +1,5 @@
 {
-    "totalImages" : 30,
+    "totalImages" : 31,
     "data" : [
         {
             "title" : "Situations",
@@ -9,7 +9,7 @@
         {
             "title" : "Portraits",
             "category" : "portraits",
-            "images" : [["01", "02", "03"], ["04", "05"]]
+            "images" : [["01", "02", "03"], ["04", "05", "06"]]
         },
         {
             "title" : "Little Nietzsche",
