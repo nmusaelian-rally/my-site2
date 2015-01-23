@@ -48,7 +48,7 @@ html {
     font-size: 14pt;
     position: absolute;
     left: 20px;
-    z-index: 10;
+    z-index: 21;
     color: gray;
     cursor: pointer;
 }
@@ -65,7 +65,7 @@ html {
 
 .aboutbox {
     position: absolute;
-    z-index: 9;
+    z-index: 20;
     left: 20px;
     bottom: 20px;
     font-family: sans-serif;
@@ -95,6 +95,7 @@ html {
     left: 0px;
     padding-left: 100px;
     /*width: 470px;*/
+    z-index: 20;
     width: auto;
     height: 100%;
     background-color: white;
