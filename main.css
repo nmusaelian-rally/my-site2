@@ -176,3 +176,7 @@ html {
 .hide {
     display: none;
 }
+
+.email {
+    font-size: 12pt;
+}
